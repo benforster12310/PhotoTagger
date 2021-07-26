@@ -146,6 +146,7 @@ ipc.on("OpenFolderPopup", function(event, data) {
         else {
             // then open a new window
             editorWindow = createWindow(800, 600, "editor.html", true)
+            event.sender.send("OpenFolderPopupResponse", true)
 
             ipc.on("MultipleEditorOpenedSendData", function(event, data){
                 event.sender.send("EditorOpenedSendDataResponse", JSON.stringify(imageArrayFullPaths))
@@ -166,6 +167,7 @@ ipc.on("OpenFilePopup", function(event, data) {
     else {
         // then open a new window
         editorWindow = createWindow(800, 600, "editor.html", true)
+        event.sender.send("OpenFilePopupResponse", true)
         let imageArrayFullPaths = result
         console.log(result)
         ipc.on("SingleEditorOpenedSendData", function(event, data){

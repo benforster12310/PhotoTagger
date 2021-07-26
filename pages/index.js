@@ -1,4 +1,11 @@
 var ipc = require("electron").ipcRenderer;
+const dialog = require("electron").remote.dialog;
+
+const BrowserWindow = require('electron').remote.getCurrentWindow()
+
+alert = function(txt) {
+    dialog.showMessageBoxSync(BrowserWindow, {"message": txt, "type":"error"})
+}
 
 var openFolderBtn = document.getElementById('openFolderBtn')
 openFolderBtn.addEventListener('click', function(){
@@ -6,7 +13,9 @@ openFolderBtn.addEventListener('click', function(){
 })
 function openFolder() {
     ipc.once("OpenFolderPopupResponse", function(event, data){
-        //alert(data)
+        if(data != true) {
+            alert(data)
+        }
     })
     ipc.send("OpenFolderPopup", "")
 }
@@ -17,7 +26,7 @@ openFileBtn.addEventListener('click', function(){
 })
 function openFile() {
     ipc.once("OpenFilePopupResponse", function(event, data){
-        //alert(data)
+        alert(data)
     })
     ipc.send("OpenFilePopup", "")
 }
