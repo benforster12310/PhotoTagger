@@ -5,6 +5,7 @@ const fs = require('fs');
 const path = require('path');
 const isImage = require("is-image")
 var exiftool = require("exiftool-vendored").exiftool
+// Change this path to your own tags csv file
 var pathToTags = '\\\\BEN-COMPUTER\\homeshare\\PHOTOS\\!phototagger_files\\tags.csv'
 
 if(require('electron-squirrel-startup')) return;
