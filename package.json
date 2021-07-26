@@ -1,0 +1,21 @@
+{
+  "name": "phototagger",
+  "version": "1.1.0",
+  "description": "a program to view and tag photos",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Ben Forster",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^13.1.6",
+    "electron-packager": "^15.3.0"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0",
+    "exiftool-vendored": "^15.2.0",
+    "is-image": "^3.0.0",
+    "path": "^0.12.7"
+  }
+}
