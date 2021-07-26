@@ -101,7 +101,7 @@ var editorWindow = null
 
 // when ready create the main window
 app.whenReady().then(() => {
-    mainWindow = createWindow(800, 600, "index.html", true)
+    mainWindow = createWindow(800, 600, "pages/index.html", true)
 })
 
 app.on('window-all-closed', function () {
