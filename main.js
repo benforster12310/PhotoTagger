@@ -145,7 +145,7 @@ ipc.on("OpenFolderPopup", function(event, data) {
         }
         else {
             // then open a new window
-            editorWindow = createWindow(800, 600, "editor.html", true)
+            editorWindow = createWindow(800, 600, "pages/editor.html", true)
             event.sender.send("OpenFolderPopupResponse", true)
 
             ipc.on("MultipleEditorOpenedSendData", function(event, data){
@@ -166,7 +166,7 @@ ipc.on("OpenFilePopup", function(event, data) {
     }
     else {
         // then open a new window
-        editorWindow = createWindow(800, 600, "editor.html", true)
+        editorWindow = createWindow(800, 600, "pages/editor.html", true)
         event.sender.send("OpenFilePopupResponse", true)
         let imageArrayFullPaths = result
         console.log(result)
@@ -197,7 +197,7 @@ ipc.on("WriteFileMetaTags", function(event, data){
 // tag editor
 ipc.on("OpenTagEditor", function(event, data){
     // then create a new window and tell it to load tagEditor.html
-    createWindow(800, 600, "tagEditor.html", true)
+    createWindow(800, 600, "pages/tagEditor.html", true)
 })
 
 ipc.on("TagEditorGetTags", function(event, data){
@@ -217,20 +217,6 @@ ipc.on("TagEditorSaveTags", function(event, data){
         event.sender.send("TagEditorSaveTagsResponse", "Tags Could Not Be Saved, Please Ensure The File At " + pathToTags + " Is Available To You")
     }
 })
-
-ipc.on("RefocusEditorWindow", function(event, data){
-    try {
-        throw new Error("It's Ok Just Click OK Because electron is being stupid")
-    }
-    catch(err) {
-        dialog.showMessageBoxSync(null, {
-            message: "Refocusing Window, Please Click OK Because Electron Is Stupid",
-            type: "info",
-            title: "Click OK, Electron Is Bad"
-        })
-    }
-})
-
 
 ipc.on("DeleteImageFake", function(event, data){
     let dataObject = JSON.parse(data)
