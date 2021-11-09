@@ -1,6 +1,6 @@
 {
   "name": "phototagger",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "An Electron Project To Tag Images On Windows",
   "main": "main.js",
   "scripts": {
@@ -9,7 +9,7 @@
   "author": "Ben Forster",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^13.1.6",
+    "electron": "^13.3.0",
     "electron-packager": "^15.3.0"
   },
   "dependencies": {
